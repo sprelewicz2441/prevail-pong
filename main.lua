@@ -121,6 +121,8 @@ function love.keypressed(key)
 		game_state = 'serve'
 	elseif key == 'enter' or key == 'return' then
 		if game_state == 'welcome' or game_state == 'end' then
+			player1.score = 0
+			player2.score = 0
 			love.graphics.clear()
 			game_state = 'serve'
 		elseif game_state == 'serve' then
@@ -136,8 +138,8 @@ end
 
 function love.draw()
 	if game_state == 'welcome' then
-		love.graphics.printf("Welcome to Prevail Pong! Good luck mofo(s)!!!", 10, WINDOW_HEIGHT/2 - 15, 780, 'center')
-		love.graphics.printf("How many mofos are playing today? (Press 0, 1 or 2)", 10, WINDOW_HEIGHT/2 + 15, 780, 'center')
+		love.graphics.printf("Welcome to Prevail Pong! Good luck!!!", 10, WINDOW_HEIGHT/2 - 15, 780, 'center')
+		love.graphics.printf("How many are playing today? (Press 0, 1 or 2)", 10, WINDOW_HEIGHT/2 + 15, 780, 'center')
 	end
 
 	if game_state == 'end' then

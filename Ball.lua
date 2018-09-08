@@ -56,6 +56,7 @@ end
 function Ball:reset(x, y)
 	self.x = x
 	self.y = y
+	-- self.dx = 0
 end
 
 function Ball:render() 
